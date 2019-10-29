@@ -8,6 +8,10 @@ body {
   height: calc(100% - 209px);
 }
 
+.popup-submit {
+  cursor: pointer;
+}
+
 body {
   font-family: 'PT Serif', serif;
   margin: 0;
