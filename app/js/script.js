@@ -18,13 +18,13 @@ $(document).ready(function($) {
 
     let isSuccessCalculated = false;
     const isValid = () => form.direction && form.count && form.date && form.time;
-    const calculate = () => { isSuccessCalculated = true; return `${form.direction * form.count} р.`; }
+    const calculate = () => { isSuccessCalculated = true; return `${form.direction * form.count} р.`; };
     const $sumBlock = $("#sum")[0];
     const $submitButton = $(".reservation__pass-form-submit-value")[0];
 
     $("#direction")
         .selectmenu({
-            change: function(event) {
+            change: function() {
                 form.direction = +$(this).find("option:selected")[0].getAttribute("sum");
 
                 $("#direction-button").css({"background":"white"});
@@ -56,7 +56,7 @@ $(document).ready(function($) {
 
     $("#count")
         .selectmenu({
-            change: function( event, ui ) {
+            change: function() {
                 form.count = +$(this).find("option:selected")[0].getAttribute("count");
 
                 $("#count-button").css({"background":"white"});
@@ -70,7 +70,7 @@ $(document).ready(function($) {
         .addClass( "overflow" );
 
     $("#datepicker").datepicker({
-        onSelect: function( dateText, object ) {
+        onSelect: function(dateText) {
             form.date = dateText;
 
             $("#datepicker").css({"background":"white"});
@@ -107,7 +107,7 @@ $(document).ready(function($) {
     });
 
     $('.popup-fade').click(function(e) {
-        if ($(e.target).closest('.popup').length == 0) {
+        if ($(e.target).closest('.popup').length === 0) {
             $(this).fadeOut();
         }
     });
@@ -134,6 +134,21 @@ $(document).ready(function($) {
 
     $('.button-what-pay').on('click', function(e){
         $('html,body').stop().animate({ scrollTop: $('#bronirovanie').offset().top }, 800);
+        e.preventDefault();
+    });
+
+    $('.menu__link-direction').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('.directions').offset().top }, 800);
+        e.preventDefault();
+    });
+
+    $('.menu__link-amount').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('.directions').offset().top }, 800);
+        e.preventDefault();
+    });
+
+    $('.menu__link-contacts').on('click', function(e){
+        $('html,body').stop().animate({ scrollTop: $('.about-us').offset().top }, 800);
         e.preventDefault();
     });
 });

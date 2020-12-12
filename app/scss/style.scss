@@ -284,14 +284,6 @@ a {
   }
 }
 
-.auto {
-  &__image {
-    background: url("../img/auto-2.jpeg") no-repeat;
-    height: 250px;
-    background-size: contain;
-  }
-}
-
 .h2 {
   font-size: 40px;
   color: grey;
@@ -336,12 +328,14 @@ a {
     background-color: rgba(255,255,255,0.5);
     padding: 20px;
     @media screen and (max-width: 1024px) {
+      position: unset;
       width: 100%;
     }
 
     &_right {
       right: 0;
       @media screen and (max-width: 1024px) {
+        padding-top: 0;
         top: 104px
       }
     }
@@ -351,6 +345,13 @@ a {
       align-items: center;
       min-height: 32px;
       padding: 0 0 0 40px;
+      color: #000;
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+      &:visited {
+        color: #000
+      }
     }
 
     &-link {
@@ -363,6 +364,10 @@ a {
     }
     &-whatsapp {
       background: url("../img/whatsapp.svg") left center no-repeat;
+      background-size: contain;
+    }
+    &-telegram {
+      background: url("../img/telegram.svg") left center no-repeat;
       background-size: contain;
     }
     &-instagram {

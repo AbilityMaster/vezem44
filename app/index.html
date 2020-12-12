@@ -66,30 +66,30 @@
                         <span class="header__login-description">Для покупки поездки</span>
                     </a>
                     <div class="header__menu-buttons">
-                        <div class="button button-order-phone popup__open">Заказать звонок</div>
                         <div class="button button-what-pay">Калькулятор поездки</div>
                     </div>
                 </div>
             </div>
         </div>
         <nav class="menu">
-            <a class="menu__link" href="">Услуги</a>
-            <a class="menu__link" href="">Связаться с нами</a>
-            <a class="menu__link" href="">Отзывы</a>
+            <a class="menu__link menu__link-direction" href="">Направления</a>
+            <a class="menu__link menu__link-amount" href="">Стоимость</a>
+            <a class="menu__link menu__link-contacts" href="">Контакты</a>
         </nav>
     </header>
    <div class="background">
        <div class="background__relative-row">
            <div class="background__info">
-               <div class="background__info-row background__info-viber">Viber - 8 920-999-23-23</div>
-               <div class="background__info-row background__info-whatsapp">Whatsapp - 8 920-999-23-23</div>
+               <a href="https://viber.click/79303926777" target="_blank" class="background__info-row background__info-viber">Viber - 8 (930) 392-67-77</a>
+               <a href="https://wa.me/79303926777" target="_blank" class="background__info-row background__info-whatsapp">Whatsapp - 8 (930) 392-67-77</a>
+               <a class="background__info-row background__info-telegram">Telegram - 8 (930) 392-67-77</a>
            </div>
            <div class="background__info background__info_right">
                <div class="background__info-row background__info-vk">
-                   <a class="background__info-link" href="https://vk.com/vezem44">Наша группа Вконтакте</a>
+                   <a class="background__info-link" target="_blank" href="https://vk.com/eurobus44">Наша группа Вконтакте</a>
                </div>
                <div class="background__info-row background__info-instagram">
-                   <a class="background__info-link" href="https://instagram.com/_vezem_">Наш instagram</a>
+                   <a class="background__info-link" target="_blank" href="https://www.instagram.com/eurobus44/">Наш instagram</a>
                </div>
            </div>
        </div>
@@ -125,7 +125,7 @@
         </div>
         <div class="directions">
             <h2 id="directions" class="h2">Направления и стоимость</h2>
-            <p class="directions__p">Ежедневный выезд из Костромы И Санкт-Петербурга в 19:00</p>
+            <p class="directions__p">Ежедневный выезд из Костромы И Санкт-Петербурга в 19:00, прибытие в 6:00</p>
             <table class="directions__table rounded">
                 <thead>
                 <tr>
@@ -214,7 +214,7 @@
                     <div class="reservation__pass-form-column">
                         <label class="reservation__pass-form-label" for="direction">Выберите направление</label>
                         <select name="direction" id="direction">
-                            <option sum="" disabled selected>Выберите количество мест</option>
+                            <option sum="" disabled selected>Выберите направление</option>
                             <option sum="2000">Кострома — Санкт-Петербург</option>
                             <option sum="2000">Санкт-Петербург — Кострома</option>
                             <option sum="250">Кострома - Ярославль</option>
@@ -227,7 +227,6 @@
                         <label class="reservation__pass-form-label" for="time">Выберите время</label>
                         <select name="time" id="time">
                             <option time="" disabled selected>Выберите время отправления</option>
-                            <option time="time">19:00</option>
                             <option time="time">19:00</option>
                         </select>
                     </div>
@@ -274,8 +273,9 @@
 
                     <p>Остались вопросы звоните, наши контакты: </p>
                     <div class="about-us__contacts">
-                        <div class="about-us__contacts-row background__info-row background__info-viber">Viber - 8 920-999-23-23</div>
-                        <div class="about-us__contacts-row background__info-row background__info-whatsapp">Whatsapp - 8 920-999-23-23</div>
+                        <a class="about-us__contacts-row background__info-row background__info-viber">Viber - 8 920-999-23-23</a>
+                        <a class="about-us__contacts-row background__info-row background__info-whatsapp">Whatsapp - 8 920-999-23-23</a>
+                        <a class="about-us__contacts-row background__info-row background__info-telegram">Telegram - 8 (930) 392-67-77</a>
                     </div>
                 </div>
             </div>
