@@ -1,4 +1,4 @@
-$(document).ready(function($) {
+$(document).ready(function() {
     $('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
@@ -8,6 +8,30 @@ $(document).ready(function($) {
             }
         }
     });
+
+    const pricesDict = new Map([
+        [1, {amount: 2000, time: "19:00"}],
+        [2, {amount: 2000, time: "19:00"}],
+        [3, {amount: 250, time: "19:00"}],
+        [4, {amount: 600, time: "19:00"}],
+        [5, {amount: 1200, time: "19:00"}],
+        [6, {amount: 1000, time: "19:00"}],
+        [7, {amount: 1500, time: "19:00"}],
+        [8, {amount: 1500, time: "19:00"}],
+        [9, {amount: 500, time: "20:30"}],
+        [10, {amount: 250, time: "5:00"}],
+        [11, {amount: 1500, time: "20:30"}],
+        [12, {amount: 1200, time: "20:30"}],
+        [13, {amount: 600, time: "2:00"}],
+        [14, {amount: 1500, time: "0:00"}],
+        [15, {amount: 500, time: "2:00"}],
+        [16, {amount: 600, time: "0:00"}],
+        [17, {amount: 1000, time: "2:00"}],
+        [18, {amount: 600, time: "0:30"}],
+        [19, {amount: 1200, time: "0:30"}],
+        [20, {amount: 1200, time: "0:30"}],
+        ]
+    );
 
     let form = {
         count: "",
@@ -24,19 +48,29 @@ $(document).ready(function($) {
 
     $("#direction")
         .selectmenu({
-            change: function() {
-                form.direction = +$(this).find("option:selected")[0].getAttribute("sum");
+            appendTo: ".reservation__pass-form-column",
+            change: function(event, ui) {
+                const {item: {index}} = ui;
+                const {amount, time} = pricesDict.get(index) || {};
+
+                const select = document.querySelector('#time');
+
+                select.options[1].text = time;
+                select.options[1].value = time;
+
+                $( "#time" ).selectmenu( "refresh" );
+
+                form.direction = amount;
 
                 $("#direction-button").css({"background":"white"});
 
                 if (isValid()) {
                     $sumBlock.innerHTML = calculate();
                 }
-
             }
         })
-        .selectmenu( "menuWidget" )
-        .addClass( "overflow" );
+        .selectmenu("menuWidget")
+        .addClass("overflow");
 
     $("#time")
         .selectmenu({
@@ -51,8 +85,7 @@ $(document).ready(function($) {
 
             }
         })
-        .selectmenu( "menuWidget" )
-        .addClass( "overflow" );
+        .selectmenu( "menuWidget" );
 
     $("#count")
         .selectmenu({
@@ -66,8 +99,8 @@ $(document).ready(function($) {
                 }
             }
         })
-        .selectmenu( "menuWidget" )
-        .addClass( "overflow" );
+        .selectmenu( "menuWidget" );
+
 
     $("#datepicker").datepicker({
         onSelect: function(dateText) {
@@ -80,6 +113,26 @@ $(document).ready(function($) {
             }
         }
     });
+
+    $.datepicker.regional.ru = {
+        closeText: "Закрыть",
+        prevText: "&#x3C;Пред",
+        nextText: "След&#x3E;",
+        currentText: "Сегодня",
+        monthNames: [ "Январь","Февраль","Март","Апрель","Май","Июнь",
+            "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь" ],
+        monthNamesShort: [ "Янв","Фев","Мар","Апр","Май","Июн",
+            "Июл","Авг","Сен","Окт","Ноя","Дек" ],
+        dayNames: [ "воскресенье","понедельник","вторник","среда","четверг","пятница","суббота" ],
+        dayNamesShort: [ "вск","пнд","втр","срд","чтв","птн","сбт" ],
+        dayNamesMin: [ "Вс","Пн","Вт","Ср","Чт","Пт","Сб" ],
+        weekHeader: "Нед",
+        dateFormat: "dd.mm.yy",
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: "" };
+    $.datepicker.setDefaults( $.datepicker.regional.ru );
 
     $submitButton.addEventListener("click", () => {
         if (isValid()) {

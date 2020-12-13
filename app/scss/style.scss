@@ -521,6 +521,8 @@ input {
   }
 
   &__table {
+    $block: &;
+
     font-size: 14px;
     border-radius: 10px;
     margin: auto auto 50px auto;
@@ -530,7 +532,6 @@ input {
     @media screen and (max-width: 1024px) {
       border: 0;
     }
-
     & th {
       background: #27489e;
       color: white;
@@ -591,8 +592,14 @@ input {
       & td:last-child {
         border-right: none
       }
+      &:not(#{$block}-title-tr) {
+        @media screen and (max-width: 1024px) {
+          border-bottom: 3px solid #ddd;
+          display: block;
+          margin-bottom: .625em;
+        }
+      }
       @media screen and (max-width: 1024px) {
-        border-bottom: 3px solid #ddd;
         display: block;
         margin-bottom: .625em;
       }
@@ -607,6 +614,26 @@ input {
         border-bottom: 1px solid #ddd;
         display: block;
         font-size: 18px;
+      }
+    }
+
+    &-tr td {
+      padding: 5px 20px;
+      font-size: 16px;
+    }
+
+    &-h {
+      font-weight: 600;
+    }
+
+    &-title-tr {
+      @media screen and (max-width: 1024px) {
+        border-bottom: none
+      }
+      & td {
+        @media screen and (max-width: 1024px) {
+          background: none;
+        }
       }
     }
 
@@ -828,4 +855,8 @@ input {
     border: 3px solid #a7cecc;
     width: 100%;
   }
+}
+
+.overflow {
+  height: 240px
 }
