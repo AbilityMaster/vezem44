@@ -279,11 +279,13 @@
                             <option sum="1200">Череповец — Ярославль</option>
                             <option sum="1200">Череповец — Кострома</option>
                         </select>
-                        <label class="reservation__pass-form-label" for="time">Выберите время</label>
-                        <select name="time" id="time">
-                            <option time="" disabled selected>Выберите время отправления</option>
-                            <option time="time">19:00</option>
-                        </select>
+                        <label class="reservation__pass-form-label" for="datepicker">Выберите дату поездки:</label>
+                        <input type="text" id="datepicker" autocomplete="off">
+<!--                        <label class="reservation__pass-form-label" for="time">Выберите время</label>-->
+<!--                        <select name="time" id="time">-->
+<!--                            <option time="" disabled selected>Выберите время отправления</option>-->
+<!--                            <option time="time">19:00</option>-->
+<!--                        </select>-->
                     </div>
                     <div class="reservation__pass-form-column">
                         <label class="reservation__pass-form-label" for="count">Количество мест</label>
@@ -296,8 +298,6 @@
                             <option count="5">5</option>
                             <option count="6">6</option>
                         </select>
-                        <label class="reservation__pass-form-label" for="datepicker">Выберите дату поездки:</label>
-                        <input type="text" id="datepicker" autocomplete="off">
                     </div>
                     <div class="reservation__pass-form-column">
                         <label class="reservation__pass-form-label">Итоговая сумма:</label>

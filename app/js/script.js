@@ -41,7 +41,7 @@ $(document).ready(function() {
     };
 
     let isSuccessCalculated = false;
-    const isValid = () => form.direction && form.count && form.date && form.time;
+    const isValid = () => form.direction && form.count && form.date;
     const calculate = () => { isSuccessCalculated = true; return `${form.direction * form.count} р.`; };
     const $sumBlock = $("#sum")[0];
     const $submitButton = $(".reservation__pass-form-submit-value")[0];
@@ -53,12 +53,12 @@ $(document).ready(function() {
                 const {item: {index}} = ui;
                 const {amount, time} = pricesDict.get(index) || {};
 
-                const select = document.querySelector('#time');
-
-                select.options[1].text = time;
-                select.options[1].value = time;
-
-                $( "#time" ).selectmenu( "refresh" );
+                // const select = document.querySelector('#time');
+                //
+                // select.options[1].text = time;
+                // select.options[1].value = time;
+                //
+                // $( "#time" ).selectmenu( "refresh" );
 
                 form.direction = amount;
 
@@ -72,20 +72,20 @@ $(document).ready(function() {
         .selectmenu("menuWidget")
         .addClass("overflow");
 
-    $("#time")
-        .selectmenu({
-            change: function(event, ui) {
-                form.time = ui.item.value;
-
-                $("#time-button").css({"background":"white"});
-
-                if (isValid()) {
-                    $sumBlock.innerHTML = calculate();
-                }
-
-            }
-        })
-        .selectmenu( "menuWidget" );
+    // $("#time")
+    //     .selectmenu({
+    //         change: function(event, ui) {
+    //             form.time = ui.item.value;
+    //
+    //             $("#time-button").css({"background":"white"});
+    //
+    //             if (isValid()) {
+    //                 $sumBlock.innerHTML = calculate();
+    //             }
+    //
+    //         }
+    //     })
+    //     .selectmenu( "menuWidget" );
 
     $("#count")
         .selectmenu({
