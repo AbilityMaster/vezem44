@@ -17,10 +17,10 @@ $(document).ready(function() {
         [5, {amount: 1200, time: "19:00"}],
         [6, {amount: 1000, time: "19:00"}],
         [7, {amount: 1500, time: "19:00"}],
-        [8, {amount: 1500, time: "19:00"}],
+        [8, {amount: 2000, time: "19:00"}],
         [9, {amount: 500, time: "20:30"}],
         [10, {amount: 250, time: "5:00"}],
-        [11, {amount: 1500, time: "20:30"}],
+        [11, {amount: 2000, time: "20:30"}],
         [12, {amount: 1200, time: "20:30"}],
         [13, {amount: 600, time: "2:00"}],
         [14, {amount: 1500, time: "0:00"}],
@@ -41,7 +41,7 @@ $(document).ready(function() {
     };
 
     let isSuccessCalculated = false;
-    const isValid = () => form.direction && form.count && form.date;
+    const isValid = () => form.direction && form.count && form.date && form.time;
     const calculate = () => { isSuccessCalculated = true; return `${form.direction * form.count} р.`; };
     const $sumBlock = $("#sum")[0];
     const $submitButton = $(".reservation__pass-form-submit-value")[0];
@@ -53,12 +53,14 @@ $(document).ready(function() {
                 const {item: {index}} = ui;
                 const {amount, time} = pricesDict.get(index) || {};
 
-                // const select = document.querySelector('#time');
-                //
-                // select.options[1].text = time;
-                // select.options[1].value = time;
-                //
-                // $( "#time" ).selectmenu( "refresh" );
+                const select = document.querySelector('#time');
+
+                form.time = time;
+                select.options[1].text = time;
+                select.options[1].value = time;
+                select.value = time;
+
+                $( "#time" ).selectmenu( "refresh" );
 
                 form.direction = amount;
 
@@ -72,20 +74,20 @@ $(document).ready(function() {
         .selectmenu("menuWidget")
         .addClass("overflow");
 
-    // $("#time")
-    //     .selectmenu({
-    //         change: function(event, ui) {
-    //             form.time = ui.item.value;
-    //
-    //             $("#time-button").css({"background":"white"});
-    //
-    //             if (isValid()) {
-    //                 $sumBlock.innerHTML = calculate();
-    //             }
-    //
-    //         }
-    //     })
-    //     .selectmenu( "menuWidget" );
+    $("#time")
+        .selectmenu({
+            change: function(event, ui) {
+                form.time = ui.item.value;
+
+                $("#time-button").css({"background":"white"});
+
+                if (isValid()) {
+                    $sumBlock.innerHTML = calculate();
+                }
+
+            }
+        })
+        .selectmenu( "menuWidget" );
 
     $("#count")
         .selectmenu({

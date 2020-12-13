@@ -173,7 +173,7 @@
                     <tr class="directions__table-tr">
                         <td>Санкт-Петербург - Ярославль</td>
                         <td>19:00</td>
-                        <td>1500 руб.</td>
+                        <td>2000 руб.</td>
                     </tr>
                     <tr class="directions__table-title-tr">
                         <td class="directions__table-h" colspan="3">Из Ярославля:</td>
@@ -191,7 +191,7 @@
                     <tr class="directions__table-tr">
                         <td>Ярославль - Санкт-Петербург</td>
                         <td>20:30</td>
-                        <td>1500 руб.</td>
+                        <td>2000 руб.</td>
                     </tr>
                     <tr class="directions__table-tr">
                         <td>Ярославль - Череповец</td>
@@ -268,7 +268,7 @@
                             <option sum="1500">Санкт-Петербург — Ярославль</option>
                             <option sum="500">Ярославль — Вологда</option>
                             <option sum="250">Ярославль — Кострома</option>
-                            +<option sum="1500">Ярославль — Санкт-Петербург</option>
+                            <option sum="2000">Ярославль — Санкт-Петербург</option>
                             <option sum="1200">Ярославль — Череповец</option>
                             <option sum="600">Вологда — Кострома</option>
                             <option sum="1500">Вологда — Санкт-Петербург</option>
@@ -279,13 +279,11 @@
                             <option sum="1200">Череповец — Ярославль</option>
                             <option sum="1200">Череповец — Кострома</option>
                         </select>
-                        <label class="reservation__pass-form-label" for="datepicker">Выберите дату поездки:</label>
-                        <input type="text" id="datepicker" autocomplete="off">
-<!--                        <label class="reservation__pass-form-label" for="time">Выберите время</label>-->
-<!--                        <select name="time" id="time">-->
-<!--                            <option time="" disabled selected>Выберите время отправления</option>-->
-<!--                            <option time="time">19:00</option>-->
-<!--                        </select>-->
+                        <label class="reservation__pass-form-label" for="time">Выберите время</label>
+                        <select name="time" id="time">
+                            <option time="" disabled selected>Выберите время отправления</option>
+                            <option time="time">19:00</option>
+                        </select>
                     </div>
                     <div class="reservation__pass-form-column">
                         <label class="reservation__pass-form-label" for="count">Количество мест</label>
@@ -298,6 +296,8 @@
                             <option count="5">5</option>
                             <option count="6">6</option>
                         </select>
+                        <label class="reservation__pass-form-label" for="datepicker">Выберите дату поездки:</label>
+                        <input type="text" id="datepicker" autocomplete="off">
                     </div>
                     <div class="reservation__pass-form-column">
                         <label class="reservation__pass-form-label">Итоговая сумма:</label>
