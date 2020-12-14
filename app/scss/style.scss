@@ -471,10 +471,34 @@ input {
   transition: color .1s ease,border-color .1s ease;
 }
 
+.ui-menu {
+  & .ui-menu-item {
+    font-size: 22px;
+    padding: 5px 0;
+    @media screen and (max-width: 460px) {
+      font-size: 16px;
+    }
+  }
+}
+
 .ui-selectmenu-button.ui-button {
+  padding: 13px 20px;
+  font-size: 20px;
+  border-radius: 11px;
   width: auto!important;
-  min-width: 265px;
+  min-width: 350px;
   font-family: "Roboto", serif;
+  &:focus {
+    outline: none;
+  }
+  @media screen and (max-width: 460px) {
+    font-size: 16px;
+    min-width: auto;
+  }
+}
+
+.ui-selectmenu-button-open.ui-button {
+  border-radius: 11px 11px 0 0;
 }
 
 .advantages {
@@ -728,11 +752,18 @@ input {
     }
 
     &-column {
-      margin-right: 15px;
       display: flex;
       flex-direction: column;
-      @media screen and (max-width: 1024px) {
-        margin-right: 0;
+      margin-bottom: 5px;
+    }
+
+    &-row {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      @media screen and (max-width:460px) {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
@@ -750,6 +781,7 @@ input {
     }
 
     &-label {
+      font-size: 18px;
       color: #fff;
       margin-top: 7px;
       margin-bottom: 5px;
@@ -759,6 +791,7 @@ input {
       align-items: center;
       justify-content: flex-start;
       display: flex;
+      margin-left: 10px;
       min-width: 140px;
 
       &-value {

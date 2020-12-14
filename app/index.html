@@ -255,55 +255,36 @@
                 <h2 id="bronirovanie" class="reservation__h2 h2">Калькулятор поездки</h2>
                 <div class="ui-front reservation__pass-form-controls">
                     <div class="reservation__pass-form-column">
-                        <label class="reservation__pass-form-label" for="direction">Выберите направление</label>
-                        <select name="direction" id="direction">
-                            <option sum="" disabled selected>Выберите направление</option>
-                            <option sum="2000">Кострома — Санкт-Петербург</option>
-                            <option sum="2000">Санкт-Петербург — Кострома</option>
-                            <option sum="250">Кострома — Ярославль</option>
-                            <option sum="600">Кострома — Вологда</option>
-                            <option sum="1200">Кострома — Череповец</option>
-                            <option sum="1000">Санкт-Петербург — Череповец</option>
-                            <option sum="1500">Санкт-Петербург — Вологда</option>
-                            <option sum="1500">Санкт-Петербург — Ярославль</option>
-                            <option sum="500">Ярославль — Вологда</option>
-                            <option sum="250">Ярославль — Кострома</option>
-                            <option sum="2000">Ярославль — Санкт-Петербург</option>
-                            <option sum="1200">Ярославль — Череповец</option>
-                            <option sum="600">Вологда — Кострома</option>
-                            <option sum="1500">Вологда — Санкт-Петербург</option>
-                            <option sum="500">Вологда — Ярославль</option>
-                            <option sum="600">Вологда — Череповец</option>
-                            <option sum="1000">Череповец — Санкт-Петербург</option>
-                            <option sum="600">Череповец — Вологда</option>
-                            <option sum="1200">Череповец — Ярославль</option>
-                            <option sum="1200">Череповец — Кострома</option>
-                        </select>
-                        <label class="reservation__pass-form-label" for="time">Выберите время</label>
-                        <select name="time" id="time">
-                            <option time="" disabled selected>Выберите время отправления</option>
-                            <option time="time">19:00</option>
-                        </select>
-                    </div>
-                    <div class="reservation__pass-form-column">
-                        <label class="reservation__pass-form-label" for="count">Количество мест</label>
-                        <select name="count" id="count">
-                            <option count="" disabled selected>Выберите количество мест</option>
-                            <option count="1">1</option>
-                            <option count="2">2</option>
-                            <option count="3">3</option>
-                            <option count="4">4</option>
-                            <option count="5">5</option>
-                            <option count="6">6</option>
-                        </select>
-                        <label class="reservation__pass-form-label" for="datepicker">Выберите дату поездки:</label>
-                        <input type="text" id="datepicker" autocomplete="off">
-                    </div>
-                    <div class="reservation__pass-form-column">
-                        <label class="reservation__pass-form-label">Итоговая сумма:</label>
-                        <div class="reservation__pass-form-sum">
-                            <i class="reservation__pass-form-logo-pay material-icons">monetization_on</i>
-                            <div class="reservation__pass-form-sum-value" id="sum"></div>
+                        <div class="reservation__pass-form-column">
+                            <label class="reservation__pass-form-label" for="direction">Поеду из</label>
+                            <select name="direction" id="from">
+                                <option sum="" disabled selected>Откуда</option>
+                            </select>
+                        </div>
+                        <div class="reservation__pass-form-column">
+                            <label class="reservation__pass-form-label" for="direction">Поеду в</label>
+                            <select name="direction" id="to">
+                                <option sum="" disabled selected>Куда</option>
+                            </select>
+                        </div>
+                        <div class="reservation__pass-form-column">
+                            <label class="reservation__pass-form-label" for="count">Количество мест</label>
+                            <select name="count" id="count">
+                                <option count="" disabled selected>Выберите количество мест</option>
+                                <option count="1">1</option>
+                                <option count="2">2</option>
+                                <option count="3">3</option>
+                                <option count="4">4</option>
+                                <option count="5">5</option>
+                                <option count="6">6</option>
+                            </select>
+                        </div>
+                        <div class="reservation__pass-form-row">
+                            <label class="reservation__pass-form-label">Итоговая сумма:</label>
+                            <div class="reservation__pass-form-sum">
+                                <i class="reservation__pass-form-logo-pay material-icons">monetization_on</i>
+                                <div class="reservation__pass-form-sum-value" id="sum"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
