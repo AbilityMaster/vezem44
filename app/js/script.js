@@ -94,13 +94,12 @@ $(document).ready(function() {
     };
 
     let form = {
-        count: "",
-        direction: "",
-        date: "",
-        time: ""
+        to: "",
+        from: "",
+        count: ""
     };
     
-    const isValid = () => form.to && form.from && form.count;
+    const isValid = () => Boolean(form.to && form.from && form.count);
     const calculate = () => {
         const nameField = `${form.from}-${form.to}`;
 
@@ -174,6 +173,12 @@ $(document).ready(function() {
             change: function(event, ui) {
                 form.from = ui.item.value;
 
+                const isDisabledTo = $("#to").selectmenu("option", "disabled");
+
+                if (form.from === form.to || !isDisabledTo) {
+                    form.to = availableToByFrom[ui.item.value][0].value;
+                }
+
                 $("#to").selectmenu( "option", "disabled", false );
 
                 const selectFrom = document.querySelector('#from');
@@ -192,8 +197,6 @@ $(document).ready(function() {
 
                     $("#to").selectmenu("refresh");
                 });
-
-
 
                 $("#time-button").css({"background":"white"});
 
